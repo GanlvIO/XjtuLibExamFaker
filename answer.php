@@ -1,6 +1,6 @@
 <?php
 if (!isset($_GET['id']) || 1 !== preg_match('/^\d{10}$/', $_GET['id']))
-	exit;
+	exit('<meta http-equiv="Content-Type"content="text/html;charset=UTF-8"><meta http-equiv="refresh"content="1;url=.">学号不合理');
 date_default_timezone_set("Asia/Shanghai");
 $date = date('Y-m-d H:i');
 file_put_contents('record.txt', $date . "\t" . $_GET['id'] . "\n", FILE_APPEND);
